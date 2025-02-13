@@ -12,12 +12,28 @@ SMODS.Joker{
 
         name = 'Flaming Joker',
         text = {
-            'Triples effect of',
-            '{C:attention}Joker to the right,',
+            '{C:mult}Triples{} effect of',
+            '{C:attention}Joker{} to the right,',
             'disable it at end of round'
 
         }
     },
     atlas = 'Jokers',
     pos = {x= 0, y = 0}
+}
+
+SMODS.Joker{
+
+    key = 'icejoker',
+    loc_txt = {
+
+        name = 'Frozen Joker',
+        text = {
+            'Freezes the state',
+            'of the {C:attention}Joker{} to the right'
+
+        }
+    },
+    atlas = 'Jokers',
+    pos = {x= 1, y = 0}
 }

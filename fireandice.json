@@ -1,7 +1,7 @@
 {
 	"id": "fireandice",
 	"name": "Fire&Ice",
-	"display_name": "<name>",
+	"display_name": "Fire & Ice",
 	"author": ["Mooftwo"],
 	"description": "My first mod, creates 2 Custom Jokers with the theme of fire and ice!",
 	"prefix": "fice",
