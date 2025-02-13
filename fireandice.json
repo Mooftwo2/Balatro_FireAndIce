@@ -1,0 +1,18 @@
+{
+	"id": "fireandice",
+	"name": "Fire&Ice",
+	"display_name": "<name>",
+	"author": ["Mooftwo"],
+	"description": "My first mod, creates 2 Custom Jokers with the theme of fire and ice!",
+	"prefix": "fice",
+	"main_file": "main.lua",
+	"priority": 0,
+	"badge_colour": "",
+	"badge_text_colour": "",
+	"version": "1.0.0",
+	"dependencies": 
+        ["Steamodded (>=1.*)",
+		"Lovely (>=0.6)",
+        "Balatro (==1.0.1m)" 
+    ]
+}
