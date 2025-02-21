@@ -14,7 +14,7 @@ SMODS.Joker{
         text = {
             '{C:mult}Triples{} effect of',
             '{C:attention}Joker{} to the right,',
-            'disable it at end of round'
+            'disable it for one round'
 
         }
     },
