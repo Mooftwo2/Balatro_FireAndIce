@@ -7,6 +7,8 @@ SMODS.Atlas{
 
 SMODS.Joker{
 
+
+
     key = 'firejoker',
     loc_txt = {
 
@@ -40,6 +42,30 @@ SMODS.Joker{
     perishable_compat = true,
 
     calculate = function(self,card,context)
+        
+        if context.setting_blind then
+            local my_pos = nil
+            for i = 1, #G.jokers.cards do
+                if G.jokers.cards[i] == card then my_pos = i; break end
+            end
+
+            if my_pos and G.jokers.cards[my_pos+1] and not card.getting_sliced and not G.jokers.cards[my_pos+1].ability.eternal and not G.jokers.cards[my_pos+1].getting_sliced then 
+                -- I copied the code from Ceremonial Dagger
+                local sliced_card = G.jokers.cards[my_pos+1]
+                sliced_card.getting_sliced = true
+                G.GAME.joker_buffer = G.GAME.joker_buffer - 1
+                G.E_MANAGER:add_event(Event({func = function()
+                    G.GAME.joker_buffer = 0
+                    card.ability.extra.Xmult = card.ability.extra.Xmult + (sliced_card.sell_cost * 0.1)
+                    card:juice_up(0.8, 0.8)
+                    sliced_card:start_dissolve({HEX("f77205")}, nil, 1.6)
+                    play_sound('slice1', 0.96+math.random()*0.08)
+                return true end }))
+                card_eval_status_text(card, 'extra', nil, nil, nil, {message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.extra.Xmult+ (sliced_card.sell_cost * 0.1)}}, colour = G.C.RED, no_juice = true})
+            end
+        end
+
+        
         if context.joker_main then
             return {
                 card = card,
