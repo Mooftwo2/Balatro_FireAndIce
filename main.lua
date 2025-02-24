@@ -128,6 +128,8 @@ SMODS.Joker{
 
         }
     },
+
+    rarity = 3;
     atlas = 'Jokers',
     pos = {x= 1, y = 0}
 }
